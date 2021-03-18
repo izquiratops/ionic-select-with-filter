@@ -1,0 +1,12 @@
+<div id="container">
+  <ion-button expand="full" (click)="dismiss()">Submit</ion-button>
+  <ion-input placeholder="Filter..." clearInput [(ngModel)]="filterValue"></ion-input>
+
+  <!-- Checkboxes in a List -->
+  <ion-list>
+    <ion-item *ngFor="let entry of (form | filterKeywords: filterValue)">
+      <ion-label>{{entry.val}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</div>
